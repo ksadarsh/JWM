@@ -1,0 +1,6 @@
+#! /bin/sh
+
+killall pcmanfm &
+jwm -restart
+sleep 2s
+pcmanfm --desktop &

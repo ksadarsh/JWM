@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<JWM>
+    <!-- The root menu. -->
+<RootMenu onroot="123" height="16">
+<Include>exec: /etc/xdg/yollar/jwm/local/bin/xdgmenumaker -n -i -f jwm</Include>
+<Separator/>
+<Program icon="/etc/xdg/yollar/jwm/ikon/run.png" label="Run">/usr/bin/gmrun</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/terminal.png" label="Terminal">xfce4-terminal</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/file-manager.png" label="File Manager">pcmanfm</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/text.png" label="Text Editor">leafpad</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/firefox.png" label="Firefox">firefox</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/firefox-hidden.png" label="Firefox Hidden Mode">firefox -private-window</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/installer.png" label="Package Manager">pamac-manager</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/updater.png" label="Update Manager">pamac-manager --updates</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/xkill.png" label="Xkill">xkill</Program>
+<Separator/>
+<Menu icon="/etc/xdg/yollar/jwm/ikon/social.png" label="Social media">
+<Program icon="/etc/xdg/yollar/jwm/ikon/youtube.png" label="Youtube">firefox https://www.youtube.com/</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/facebook.png" label="Facebook">firefox https://www.facebook.com/</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/twitter.png" label="Twitter">firefox https://twitter.com/</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/gooplus.png" label="Google+">firefox https://plus.google.com/discover</Program>
+</Menu>
+<Menu icon="/etc/xdg/yollar/jwm/ikon/normal.png" label="Panel">
+<Program icon="/etc/xdg/yollar/jwm/ikon/hide.png" label="Hide">sh "$HOME/.jwm/panel/hide"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/show.png" label="Show">sh "$HOME/.jwm/panel/show"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/bottom.png" label="Bottom">sh "$HOME/.jwm/panel/bottom"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/top.png" label="Top">sh "$HOME/.jwm/panel/top"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/kapat.png" label="End the Dock Panel">sh "/etc/xdg/yollar/jwm/komutlar/rıhtım-close"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/run.png" label="Run Dock Panel">sh "/etc/xdg/yollar/jwm/komutlar/rıhtım-run"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/plank.png" label="Plank Run">sh "/etc/xdg/yollar/jwm/komutlar/plank-run"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/plank.png" label="Plank Configure">plank --preferences</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/kapat.png" label="Plank Terminate">sh "/etc/xdg/yollar/jwm/komutlar/plank-close"</Program>
+</Menu>
+<Menu icon="/etc/xdg/yollar/jwm/ikon/run-dock.png" label="Run/Terminate">
+<Menu icon="/etc/xdg/yollar/jwm/ikon/conky.png" label="Conky">
+<Program icon="/etc/xdg/yollar/jwm/ikon/kapat.png" label="Terminate">sh "/etc/xdg/yollar/jwm/komutlar/conk-close"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/normal.png" label="Run On Panel">sh "/etc/xdg/yollar/jwm/komutlar/bir-conk"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/desktop.png" label="Run On Desktop">sh "/etc/xdg/yollar/jwm/komutlar/iki-conk"</Program>
+</Menu>
+<Menu icon="/etc/xdg/yollar/jwm/ikon/volumeicon.png" label="Sound Control">
+<Program icon="/etc/xdg/yollar/jwm/ikon/run.png" label="Run">sh "/etc/xdg/yollar/jwm/komutlar/vol-run"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/kapat.png" label="Terminate">sh "/etc/xdg/yollar/jwm/komutlar/vol-close"</Program>
+</Menu>
+<Menu icon="/etc/xdg/yollar/jwm/ikon/ibus.png" label="Keyboard Language">
+<Program icon="/etc/xdg/yollar/jwm/ikon/run.png" label="Run">sh "/etc/xdg/yollar/jwm/komutlar/ibus-run"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/kapat.png" label="Terminate">sh "/etc/xdg/yollar/jwm/komutlar/ibus-close"</Program>
+</Menu>
+<Menu icon="/etc/xdg/yollar/jwm/ikon/batt.png" label="Battery Indicator">
+<Program icon="/etc/xdg/yollar/jwm/ikon/run.png" label="Run">sh "/etc/xdg/yollar/jwm/komutlar/bat-run"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/kapat.png" label="Terminate">sh "/etc/xdg/yollar/jwm/komutlar/bat-close"</Program>
+</Menu>
+<Menu icon="/etc/xdg/yollar/jwm/ikon/connect.png" label="Network Manager">
+<Program icon="/etc/xdg/yollar/jwm/ikon/run.png" label="Run">sh "/etc/xdg/yollar/jwm/komutlar/applet-run"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/kapat.png" label="Terminate">sh "/etc/xdg/yollar/jwm/komutlar/applet-close"</Program>
+</Menu>
+</Menu>
+<Menu icon="/etc/xdg/yollar/jwm/ikon/hwinfo.png" label="System Information">
+<Program icon="/etc/xdg/yollar/jwm/ikon/hardinfo.png" label="Computer and System Information">/usr/bin/hardinfo</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/hwinfo.png" label="Manage Employees">lxtask</Program>
+</Menu>
+<Menu icon="/etc/xdg/yollar/jwm/ikon/word.png" label="Menu Language">
+<Program icon="/etc/xdg/yollar/jwm/ikon/de.png" label="DE">sh "/etc/xdg/yollar/jwm/lang/lang-de"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/en.png" label="EN">sh "/etc/xdg/yollar/jwm/lang/lang-en"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/es.png" label="ES">sh "/etc/xdg/yollar/jwm/lang/lang-es"</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/tr.png" label="TR">sh "/etc/xdg/yollar/jwm/lang/lang-tr"</Program>
+</Menu>
+<Program icon="/etc/xdg/yollar/jwm/ikon/default.png" label="Background">/etc/xdg/yollar/jwm/komutlar/background.py</Program>
+<Menu icon="/etc/xdg/yollar/jwm/ikon/dikkat.png" label="Open As Root">
+<Program icon="/etc/xdg/yollar/jwm/ikon/file-manager-root.png" label="File Manager">gksudo pcmanfm</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/root-term.png" label="Terminal">gksudo xfce4-terminal</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/bleachbit.png" label="System Cleaner">gksudo bleachbit</Program>
+</Menu>
+<Program icon="/etc/xdg/yollar/jwm/ikon/desktop.png" label="Restore System to Default">sh "/etc/xdg/yollar/jwm/komutlar/varsayilan"</Program>
+<Menu icon="/etc/xdg/yollar/jwm/ikon/linux.png" label="JWM Resources">
+<Program icon="/etc/xdg/yollar/jwm/ikon/theme.png" label="JWM Configuration">firefox http://joewing.net/projects/jwm/config-2.3.html</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/archman.png" label="Archman Forum">firefox http://archman.org/forum/index.php</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/archman.png" label="Archman Telegram">firefox http://t.me/ArchmanOS</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/archman.png" label="Archman GitLab">firefox https://gitlab.com/Archman-OS</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/archman.png" label="Archman Freenode">firefox http://archman.org/irc-yardim/</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/arch.png" label="Arch Wiki">firefox https://wiki.archlinux.org/</Program>
+</Menu>
+<Separator/>
+<Menu icon="/etc/xdg/yollar/jwm/ikon/shutdown.png" label="Exit">
+<Program label="Refresh JWM" icon="/etc/xdg/yollar/jwm/ikon/reload.png">sh "$HOME/.jwm/restart"</Program>
+<Exit label="Exit JWM" confirm="true" icon="/etc/xdg/yollar/jwm/ikon/logout.png"/>
+<Program icon="/etc/xdg/yollar/jwm/ikon/lock.png" label="Lock Screen">xlock</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/sudpend.png" label="Suspend">systemctl suspend</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/reboot.png" label="Restart">systemctl reboot</Program>
+<Program icon="/etc/xdg/yollar/jwm/ikon/shutdown.png" label="Shut down the computer">systemctl poweroff</Program>
+</Menu>
+</RootMenu>
+</JWM>

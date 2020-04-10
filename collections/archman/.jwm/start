@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<JWM>
+<StartupCommand>sh "$HOME/.jwm/start2"</StartupCommand>
+<StartupCommand>pcmanfm --desktop</StartupCommand>
+<StartupCommand>numlockx</StartupCommand>
+<StartupCommand>/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1</StartupCommand>
+</JWM>

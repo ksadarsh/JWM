@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<JWM>
+    <!-- Tray at the bottom. -->
+<Tray x="1" y="-1" halign="center" valign="top" height="32" autohide="off">
+<TrayButton popup="Archman JWM Menu" icon="/etc/xdg/yollar/jwm/ikon/theme.png">root:1</TrayButton>
+<Spacer width="2"/>
+<TrayButton popup="Pcmanfm" icon="/etc/xdg/yollar/jwm/ikon/distributor-logo-chaletos.png">exec:pcmanfm</TrayButton>
+<Spacer width="2"/>
+<TrayButton popup="Firefox" icon="/etc/xdg/yollar/jwm/ikon/firefox.png">exec:firefox</TrayButton>
+<Spacer width="2"/>
+<TrayButton popup="Terminal" icon="/etc/xdg/yollar/jwm/ikon/terminal.png">exec:xfce4-terminal</TrayButton>
+<Spacer width="2"/>
+<TrayButton popup="Leafpad" icon="/etc/xdg/yollar/jwm/ikon/text.png">exec:leafpad</TrayButton>
+<Spacer width="2"/>
+<TrayButton popup="Pamac Manager" icon="/etc/xdg/yollar/jwm/ikon/installer.png">exec:pamac-manager</TrayButton>
+<Spacer width="2"/>
+<TrayButton popup="Archman Settings Manager" icon="/etc/xdg/yollar/jwm/ikon/settings.png">exec:archman-settings-manager</TrayButton>
+<Spacer width="2"/>
+<TrayButton popup="Onboard" icon="/etc/xdg/yollar/jwm/ikon/onboard.png">exec:onboard</TrayButton>
+<Spacer width="2"/>
+<TrayButton popup="Galculator" icon="/etc/xdg/yollar/jwm/ikon/accessories-calculator.png">exec:galculator</TrayButton>
+<Spacer width="2"/>
+<TrayButton popup="Guvcview" icon="/etc/xdg/yollar/jwm/ikon/webcam.png">exec:guvcview</TrayButton>
+<Spacer width="2"/>
+<TrayButton popup="Parole" icon="/etc/xdg/yollar/jwm/ikon/mplayer.png">exec:parole</TrayButton>
+<Spacer width="2"/>
+<TrayButton popup="Telegram" icon="/etc/xdg/yollar/jwm/ikon/social.png">exec:telegram-desktop</TrayButton>
+</Tray>
+</JWM>

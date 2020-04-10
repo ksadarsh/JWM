@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<JWM>
+    <!-- Tray at the bottom. -->
+<Tray x="1" y="-1" halign="left" valign="bottom" height="26" autohide="off">
+<TrayButton popup="Archman JWM Menu" icon="/etc/xdg/yollar/jwm/ikon/archman.png">root:1</TrayButton>
+<Spacer width="2"/>
+<TaskList maxwidth="110"/>
+<Spacer width="2"/>
+<Pager labeled="true"/>
+<Spacer width="5"/>
+<TrayButton popup="Minimize all windows" icon="/etc/xdg/yollar/jwm/ikon/winpan.png" label="">showdesktop</TrayButton>
+<Spacer width="2"/>
+<Dock spacing="5"/>
+<Spacer width="2"/>
+<Swallow name="HHH" width="KKK">HHH</Swallow>
+<Spacer width="2"/>
+<Clock width="55" format="%H:%M"><Button mask="123">exec:gsimplecal</Button></Clock>
+</Tray>
+</JWM>

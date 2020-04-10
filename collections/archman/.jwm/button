@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<JWM>
+<ButtonClose type="image">/etc/xdg/yollar/jwm/ikon/close.png</ButtonClose>
+<ButtonMax type="image">/etc/xdg/yollar/jwm/ikon/maximize.png</ButtonMax>
+<ButtonMin type="image">/etc/xdg/yollar/jwm/ikon/minimize.png</ButtonMin>
+</JWM>

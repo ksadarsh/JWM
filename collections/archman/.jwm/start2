@@ -1,0 +1,10 @@
+#!/bin/sh
+
+sleep 0.20s
+AAA &
+BBB &
+conky &
+DDD &
+EEE &
+PPP &
+sleep 4s && killall dunst &

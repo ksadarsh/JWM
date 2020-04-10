@@ -1,0 +1,17 @@
+#! /bin/sh
+
+sed -i 's/valign="top"/valign="bottom"/g' $HOME/.jwm/panel/tray &
+sed -i 's/valign="bottom"/valign="top"/g' $HOME/.jwm/tray2 &
+sed -i 's/top/bottom/g' $HOME/.jwm/panel/hide &
+sed -i 's/top/bottom/g' $HOME/.jwm/panel/show &
+sleep 0.2s
+sed -i 's/autohide="top"/autohide="off"/g' $HOME/.jwm/panel/tray &
+sed -i 's/autohide="bottom"/autohide="off"/g' $HOME/.jwm/tray2 &
+sleep 0.2s
+cp -a $HOME/.jwm/panel/tray $HOME/.jwm/tray &
+sh "$HOME/.jwm/restart" &
+
+
+
+
+
