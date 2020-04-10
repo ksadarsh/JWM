@@ -61,8 +61,8 @@ fi
 #https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-config
 
 git init
-git config --global user.name "Erik Dubois"
-git config --global user.email "erik.dubois@gmail.com"
+git config --global user.name "Adarsh Bhat"
+git config --global user.email "kanakbhat6@gmail.com"
 sudo git config --system core.editor nano
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=18000'
