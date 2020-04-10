@@ -1,0 +1,3 @@
+su
+enter password
+gpasswd -a adarsh sudo

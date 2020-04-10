@@ -1,0 +1,2 @@
+pulseaudio --check
+pulseaudio -D
