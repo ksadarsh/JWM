@@ -8,6 +8,6 @@ yad --form --center --undecorated --align=left --width=165 --borders=10 --height
                 /org/freedesktop/PowerManagement \
                 org.freedesktop.PowerManagement.Suspend" \
 --field="  Hibernate!gnome-session-hibernate!Hibernate":fbtn "dbus-send --system --print-reply --dest=org.freedesktop.login1 /org/freedesktop/login1 "org.freedesktop.login1.Manager.Hibernate" boolean:true" \
---field="  Log Out!gnome-logout!Log Out":fbtn "jwm -exit" \
+--field="  Log Out!gnome-logout!Log Out":fbtn "pkill icewm" \
 --field="  Screen Lock!system-lock-screen!Lock your screen":fbtn "i3lock -i /usr/share/images/i3lock.png -n" \
 --button=gtk-cancel --buttons-layout=center \
