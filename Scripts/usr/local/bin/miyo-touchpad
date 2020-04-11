@@ -1,0 +1,10 @@
+#!/bin/bash
+yad --title="Touchpad Controls" --width=370 --window-icon="/usr/share/images/menu/touchpad.png" --center --buttons-layout="center" --text-align=center --text="
+           Temporarily turn your touchpad On or Off.
+
+HINT:  Your touchpad must already be on and active 
+                    before selecting Off While Typing.
+" \
+--button="On":"synclient TouchpadOff=0" \
+--button="Off":"synclient TouchpadOff=1" \
+--button="Off While Typing":"syndaemon -i 2.0 -d" \

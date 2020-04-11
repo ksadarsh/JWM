@@ -1,0 +1,2 @@
+#!/bin/bash
+killall conky;cp -r ~/.config/conky/basic/.conkyrc ~/.conkyrc;conky
