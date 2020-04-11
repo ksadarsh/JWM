@@ -30,9 +30,9 @@ else
   fi
 fi
 
-if [ ! -z "$(which zenity)" ]
+if [ ! -z "$(which yad)" ]
 then
-zenity --question --title="Shutdown" --text="Shutdown?"
+yad --question --title="Shutdown" --text="Shutdown?"
   case $? in
      0) echo "Shutdown"
      ${SHUTDOWN}
@@ -68,4 +68,4 @@ else
 
  esac
 
-fi ## zenity
+fi ## yad
