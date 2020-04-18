@@ -1,0 +1,37 @@
+
+These are keybindings used by JWM. There are others not listed here that are normal keybindings used on other desktops/window managers.
+
+Editing them here won't change them. If you want to edit them or add others, they must be changed in the .jwmrc file.
+_________________________________________________________
+
+Arrow keys...
+
+Up	Move up within a page or file
+Down 	Move down 	"
+Left	Move left	"
+Right	Move right	"
+_____________________________________
+
+Escape	Close menus
+Print	Screenshot
+_____________________________________
+
+Alt + Tab		Next Stacked Window
+Alt + c			Close Window
+Alt + 1-2		Switch Desktop 
+Alt + F1		Send to other Desktop
+Alt + F2		dmenu (run command)
+Alt + F10		Maximize Window
+Alt + Right Arrow	Toggle Desktops
+Alt + Left Arrow	Toggle Desktops
+Alt + Down Arrow	Show Desktop (Minimize all windows)
+_____________________________________
+
+Alt + Space	Root Menu
+Alt + f		File Manager
+Alt + t		Terminal
+Alt + l		Logout
+Alt + r		Reboot
+Alt + s		Shutdown
+Alt + x		Screen Lock
+Alt + k		Keybindings (this page)  
