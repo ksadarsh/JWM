@@ -22,7 +22,7 @@ wget -O /tmp/sardi.tar.gz "https://sourceforge.net/projects/sardi/files/latest/d
 mkdir /tmp/sardi
 tar -zxf /tmp/sardi.tar.gz -C /tmp/sardi
 rm /tmp/sardi.tar.gz
-cp -rf /tmp/sardi/* ~/.icons/
+sudo cp -rf /tmp/sardi/* /usr/share/icons/
 
 # cleaning tmp
 [ -d /tmp/sardi ] && rm -rf /tmp/sardi

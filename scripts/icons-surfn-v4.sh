@@ -137,7 +137,7 @@ esac
 
 git clone https://github.com/erikdubois/Surfn /tmp/Surfn
 find /tmp/Surfn -maxdepth 1 -type f -exec rm -rf '{}' \;
-cp -rf /tmp/Surfn/* ~/.icons/
+sudo cp -rf /tmp/Surfn/* /usr/share/icons/
 
 # cleaning tmp
 [ -d /tmp/Surfn ] && rm -rf /tmp/Surfn
