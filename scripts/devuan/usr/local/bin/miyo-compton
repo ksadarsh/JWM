@@ -1,0 +1,6 @@
+#!/bin/bash
+yad --title="Compton" --width=280 --window-icon="/usr/share/images/menu/compton.png" --text-align=center --center --buttons-layout="center" --text="
+Temporarily turn Compton On or Off.
+" \
+--button="On":"compton" \
+--button="Off":"killall compton" \

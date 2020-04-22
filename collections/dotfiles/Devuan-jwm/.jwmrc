@@ -45,7 +45,7 @@
 		<Program icon="/usr/share/icons/Surfn/scalable/apps/scalable/keyboard.svg" label="Live Keyboard Layout">miyo-keyboard</Program>
 	</Menu>
        <Separator/>
-        <Program icon="/usr/share/icons/Surfn/scalable/apps/scalable/lock-screen.svg" label="Screen Lock">i3lock</Program>
+        <Program icon="/usr/share/icons/Surfn/scalable/apps/scalable/lock-screen.svg" label="Screen Lock">i3lock -i ~/.config/i3/scripts/lockscreen/lockscreen.png -t</Program>
 	<!-- Menu structure -->
 	<Menu label="Exit" icon="/usr/share/icons/Surfn/scalable/apps/scalable/log-out.svg">
 	<Program icon="/usr/share/icons/Surfn/scalable/apps/scalable/shutdownscheduler.svg" label="Shutdown">systemctl poweroff</Program>
@@ -75,7 +75,7 @@
 
     <!-- STARTUP COMMANDS -->
 
-	<StartupCommand>lxpolkit</StartupCommand> 
+	<StartupCommand>/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1</StartupCommand> 
 				<StartupCommand>nitrogen --restore</StartupCommand>
 					<StartupCommand>/usr/share/update-notifier/update-notifier.py</StartupCommand>
 
@@ -101,7 +101,10 @@
 	<StartupCommand>xrandr --output eDP-1 --brightness 0.4</StartupCommand>
     <!-- Tray at the bottom. -->
     <Tray x="0" y="-1" height="30" autohide="off">
-	    <TrayButton icon="/usr/share/icons/Surfn/scalable/apps/scalable/unity8-dash.svg">root:1</TrayButton>
+		<Spacer width="7"/>
+	    <TrayButton icon="/home/adarsh/.config/jwm/icons/menu1.png">root:1</TrayButton>
+        <Spacer width="7"/>
+        <TrayButton icon="/home/adarsh/.config/jwm/icons/jgmenu.png">exec:jgmenu_run</TrayButton>
         <Spacer width="7"/>
 		<TrayButton icon="/usr/share/icons/Surfn/scalable/apps/scalable/file-manager.svg">exec:pcmanfm</TrayButton>
 		<Spacer width="7"/>

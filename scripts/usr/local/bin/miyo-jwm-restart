@@ -1,2 +1,0 @@
-#!/bin/bash
-jwm -restart;bash -c "sleep 1 && nitrogen --restore"

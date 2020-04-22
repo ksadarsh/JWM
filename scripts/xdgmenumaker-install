@@ -7,8 +7,7 @@ sudo apt install txt2tags
 make
 sudo make install
 cd ..
-rm -rf ./xdgmenumaker-master
-rm -f master.zip
+rm -rf xdgmenumaker
 <Include>exec: xdgmenumaker -n -i -f jwm</Include>
 
 

@@ -1,0 +1,102 @@
+#!/bin/sh
+# Coded by MiyoLinux
+# This Keyboard Changer was made to aid users since
+# there is no native application such as this for
+# Openbox. Hopefully, it will be useful.
+
+yad --form --width=250 --scroll --borders=10 --button=gtk-ok --height=500 --window-icon="/usr/share/miyolinux/miyolinux.png" --center --title="Live Keyboard" --text-align=center --text="
+Temporarily change the keyboard 
+layout in the Live Session.
+" \
+--field="  Afghani!/usr/share/miyolinux/flags/af.png!Afghani":fbtn "setxkbmap -layout af" \
+--field="  Albanian!/usr/share/miyolinux/flags/al.png!Albanian":fbtn "setxkbmap -layout al" \
+--field="  Amharic!/usr/share/miyolinux/flags/et.png!Amharic":fbtn "setxkbmap -layout et" \
+--field="  Arabic!/usr/share/miyolinux/flags/ara.png!Arabic":fbtn "setxkbmap -layout ara" \
+--field="  Arabic (Morocco)!/usr/share/miyolinux/flags/ma.png!Morocco":fbtn "setxkbmap -layout ma" \
+--field="  Arabic (Syria)!/usr/share/miyolinux/flags/sy.png!Syria":fbtn "setxkbmap -layout sy" \
+--field="  Armenian!/usr/share/miyolinux/flags/am.png!Armenian":fbtn "setxkbmap -layout am" \
+--field="  Azerbaijani!/usr/share/miyolinux/flags/az.png!Azerbaijani":fbtn "setxkbmap -layout az" \
+--field="  Bambara!/usr/share/miyolinux/flags/ml.png!Bambara":fbtn "setxkbmap -layout ml" \
+--field="  Belarusian!/usr/share/miyolinux/flags/by.png!Belarusian":fbtn "setxkbmap -layout by" \
+--field="  Belgian!/usr/share/miyolinux/flags/be.png!Belgian":fbtn "setxkbmap -layout be" \
+--field="  Bengali!/usr/share/miyolinux/flags/bd.png!Bengali":fbtn "setxkbmap -layout bd" \
+--field="  Bosnian!/usr/share/miyolinux/flags/ba.png!Bosnian":fbtn "setxkbmap -layout ba" \
+--field="  Braille!/usr/share/miyolinux/flags/brai.png!Braille":fbtn "setxkbmap -layout brai" \
+--field="  Bulgarian!/usr/share/miyolinux/flags/bg.png!Bulgarian":fbtn "setxkbmap -layout bg" \
+--field="  Burmese!/usr/share/miyolinux/flags/mm.png!Burmese":fbtn "setxkbmap -layout mm" \
+--field="  Catalan!/usr/share/miyolinux/flags/ad.png!Catalan":fbtn "setxkbmap -layout ad" \
+--field="  Chinese!/usr/share/miyolinux/flags/cn.png!Chinese":fbtn "setxkbmap -layout cn" \
+--field="  Croatian!/usr/share/miyolinux/flags/hr.png!Croatian":fbtn "setxkbmap -layout hr" \
+--field="  Czech!/usr/share/miyolinux/flags/cz.png!Czech":fbtn "setxkbmap -layout cz" \
+--field="  Danish!/usr/share/miyolinux/flags/dk.png!Danish":fbtn "setxkbmap -layout dk" \
+--field="  Dhivehi!/usr/share/miyolinux/flags/mv.png!Dhivehi":fbtn "setxkbmap -layout mv" \
+--field="  Dutch!/usr/share/miyolinux/flags/nl.png!Dutch":fbtn "setxkbmap -layout nl" \
+--field="  Dzongkha!/usr/share/miyolinux/flags/bt.png!Dzongkha":fbtn "setxkbmap -layout bt" \
+--field="  English (Cameroon)!/usr/share/miyolinux/flags/cm.png!Cameroon":fbtn "setxkbmap -layout cm" \
+--field="  English (Ghana)!/usr/share/miyolinux/flags/gh.png!Ghana":fbtn "setxkbmap -layout gh" \
+--field="  English (Nigeria)!/usr/share/miyolinux/flags/ng.png!Nigeria":fbtn "setxkbmap -layout ng" \
+--field="  English (South Africa)!/usr/share/miyolinux/flags/za.png!South Africa":fbtn "setxkbmap -layout za" \
+--field="  English (UK)!/usr/share/miyolinux/flags/gb.png!United Kingdom":fbtn "setxkbmap -layout gb" \
+--field="  English (US)!/usr/share/miyolinux/flags/us.png!United States":fbtn "setxkbmap -layout us" \
+--field="  Esperanto!/usr/share/miyolinux/flags/epo.png!Esperanto":fbtn "setxkbmap -layout epo" \
+--field="  Estonian!/usr/share/miyolinux/flags/ee.png!Estonian":fbtn "setxkbmap -layout ee" \
+--field="  Faroese!/usr/share/miyolinux/flags/fo.png!Faroese":fbtn "setxkbmap -layout fo" \
+--field="  Filipino!/usr/share/miyolinux/flags/ph.png!Filipino":fbtn "setxkbmap -layout ph" \
+--field="  Finnish!/usr/share/miyolinux/flags/fi.png!Finnish":fbtn "setxkbmap -layout fi" \
+--field="  French!/usr/share/miyolinux/flags/fr.png!French":fbtn "setxkbmap -layout fr" \
+--field="  French (Canada)!/usr/share/miyolinux/flags/ca.png!Canada":fbtn "setxkbmap -layout ca" \
+--field="  French (Congo)!/usr/share/miyolinux/flags/cd.png!Democratic Republic of the Congo":fbtn "setxkbmap -layout cd" \
+--field="  French (Guinea)!/usr/share/miyolinux/flags/gn.png!Guinea":fbtn "setxkbmap -layout gn" \
+--field="  Georgian!/usr/share/miyolinux/flags/ge.png!Georgian":fbtn "setxkbmap -layout ge" \
+--field="  German!/usr/share/miyolinux/flags/de.png!German":fbtn "setxkbmap -layout de" \
+--field="  German (Austria)!/usr/share/miyolinux/flags/at.png!Austria":fbtn "setxkbmap -layout at" \
+--field="  German (Switzerland)!/usr/share/miyolinux/flags/ch.png!Switzerland":fbtn "setxkbmap -layout ch" \
+--field="  Greek!/usr/share/miyolinux/flags/gr.png!Greek":fbtn "setxkbmap -layout gr" \
+--field="  Hebrew!/usr/share/miyolinux/flags/il.png!Hebrew":fbtn "setxkbmap -layout il" \
+--field="  Hungarian!/usr/share/miyolinux/flags/hu.png!Hungarian":fbtn "setxkbmap -layout hu" \
+--field="  Icelandic!/usr/share/miyolinux/flags/is.png!Icelandic":fbtn "setxkbmap -layout is" \
+--field="  Indian!/usr/share/miyolinux/flags/in.png!Indian":fbtn "setxkbmap -layout in" \
+--field="  Iraqi!/usr/share/miyolinux/flags/iq.png!Iraqi":fbtn "setxkbmap -layout iq" \
+--field="  Irish!/usr/share/miyolinux/flags/ie.png!Irish":fbtn "setxkbmap -layout ie" \
+--field="  Italian!/usr/share/miyolinux/flags/it.png!Italian":fbtn "setxkbmap -layout it" \
+--field="  Japanese!/usr/share/miyolinux/flags/jp.png!Japanese":fbtn "setxkbmap -layout jp" \
+--field="  Kazakh!/usr/share/miyolinux/flags/kz.png!Kazakh":fbtn "setxkbmap -layout kz" \
+--field="  Khmer (Cambodia)!/usr/share/miyolinux/flags/kh.png!Cambodia":fbtn "setxkbmap -layout kh" \
+--field="  Korean!/usr/share/miyolinux/flags/kr.png!Korean":fbtn "setxkbmap -layout kr" \
+--field="  Kyrgyz!/usr/share/miyolinux/flags/kg.png!Kyrgyz":fbtn "setxkbmap -layout kg" \
+--field="  Lao!/usr/share/miyolinux/flags/la.png!Lao":fbtn "setxkbmap -layout la" \
+--field="  Latvian!/usr/share/miyolinux/flags/lv.png!Latvian":fbtn "setxkbmap -layout lv" \
+--field="  Lithuanian!/usr/share/miyolinux/flags/lt.png!Lithuanian":fbtn "setxkbmap -layout lt" \
+--field="  Macedonian!/usr/share/miyolinux/flags/mk.png!Macedonian":fbtn "setxkbmap -layout mk" \
+--field="  Maltese!/usr/share/miyolinux/flags/mt.png!Maltese":fbtn "setxkbmap -layout mt" \
+--field="  Maori!/usr/share/miyolinux/flags/mao.png!Maori":fbtn "setxkbmap -layout mao" \
+--field="  Mongolian!/usr/share/miyolinux/flags/mn.png!Mongolian":fbtn "setxkbmap -layout mn" \
+--field="  Montenegrin!/usr/share/miyolinux/flags/me.png!Montenegrin":fbtn "setxkbmap -layout me" \
+--field="  Nepali!/usr/share/miyolinux/flags/np.png!Nepali":fbtn "setxkbmap -layout np" \
+--field="  Norwegian!/usr/share/miyolinux/flags/no.png!Norwegian":fbtn "setxkbmap -layout no" \
+--field="  Persian!/usr/share/miyolinux/flags/ir.png!Persian":fbtn "setxkbmap -layout ir" \
+--field="  Polish!/usr/share/miyolinux/flags/pl.png!Polish":fbtn "setxkbmap -layout pl" \
+--field="  Portuguese!/usr/share/miyolinux/flags/pt.png!Portuguese":fbtn "setxkbmap -layout pt" \
+--field="  Portuguese (Brazil)!/usr/share/miyolinux/flags/br.png!Brazil":fbtn "setxkbmap -layout br" \
+--field="  Romanian!/usr/share/miyolinux/flags/ro.png!Romanian":fbtn "setxkbmap -layout ro" \
+--field="  Russian!/usr/share/miyolinux/flags/ru.png!Russian":fbtn "setxkbmap -layout ru" \
+--field="  Serbian (Cyrillic)!/usr/share/miyolinux/flags/rs.png!Serbian":fbtn "setxkbmap -layout rs" \
+--field="  Sinhala (phonetic)!/usr/share/miyolinux/flags/lk.png!Sinhala":fbtn "setxkbmap -layout lk" \
+--field="  Slovak!/usr/share/miyolinux/flags/sk.png!Slovak":fbtn "setxkbmap -layout sk" \
+--field="  Slovenian!/usr/share/miyolinux/flags/si.png!Slovenian":fbtn "setxkbmap -layout si" \
+--field="  Spanish!/usr/share/miyolinux/flags/es.png!Spanish":fbtn "setxkbmap -layout es" \
+--field="  Spanish (Latin America)!/usr/share/miyolinux/flags/latam.png!Latin America":fbtn "setxkbmap -layout latam" \
+--field="  Swahili (Kenya)!/usr/share/miyolinux/flags/ke.png!Kenya":fbtn "setxkbmap -layout ke" \
+--field="  Swahili (Tanzania)!/usr/share/miyolinux/flags/tz.png!Tanzania":fbtn "setxkbmap -layout tz" \
+--field="  Swedish!/usr/share/miyolinux/flags/se.png!Swedish":fbtn "setxkbmap -layout se" \
+--field="  Taiwanese!/usr/share/miyolinux/flags/tw.png!Taiwanese":fbtn "setxkbmap -layout tw" \
+--field="  Tajik!/usr/share/miyolinux/flags/tj.png!Tajik":fbtn "setxkbmap -layout tj" \
+--field="  Thai!/usr/share/miyolinux/flags/th.png!Thai":fbtn "setxkbmap -layout th" \
+--field="  Tswana!/usr/share/miyolinux/flags/bw.png!Tswana":fbtn "setxkbmap -layout bw" \
+--field="  Turkish!/usr/share/miyolinux/flags/tr.png!Turkish":fbtn "setxkbmap -layout tr" \
+--field="  Turkmen!/usr/share/miyolinux/flags/tm.png!Turkmen":fbtn "setxkbmap -layout tm" \
+--field="  Ukrainian!/usr/share/miyolinux/flags/ua.png!Ukrainian":fbtn "setxkbmap -layout ua" \
+--field="  Urdu (Pakistan)!/usr/share/miyolinux/flags/pk.png!Pakistan":fbtn "setxkbmap -layout pk" \
+--field="  Uzbek!/usr/share/miyolinux/flags/uz.png!Uzbek":fbtn "setxkbmap -layout uz" \
+--field="  Vietnamese!/usr/share/miyolinux/flags/vn.png!Vietnamese":fbtn "setxkbmap -layout vn" \
+--field="  Wolof!/usr/share/miyolinux/flags/sn.png!Wolof":fbtn "setxkbmap -layout sn" \

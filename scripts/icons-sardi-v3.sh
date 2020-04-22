@@ -22,8 +22,8 @@ wget -O /tmp/sardi.tar.gz "https://sourceforge.net/projects/sardi/files/latest/d
 mkdir /tmp/sardi
 tar -zxf /tmp/sardi.tar.gz -C /tmp/sardi
 rm /tmp/sardi.tar.gz
-sudo cp -rf /tmp/sardi/* /usr/share/icons/
-
+sudo cp -rf /home/adarsh/Downloads/sardi/* /usr/share/icons/
+tar -zxf sardi-icons-20.4-1.tar.gz -C /home/adarsh/Downloads/sardi/
 # cleaning tmp
 [ -d /tmp/sardi ] && rm -rf /tmp/sardi
 

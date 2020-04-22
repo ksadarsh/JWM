@@ -1,6 +1,0 @@
-#!/bin/bash
-yad --title="Conky" --width=275 --window-icon="/usr/share/images/menu/conky.png" --text-align=center --center --buttons-layout="center" --text="
-Temporarily turn the Conky On or Off.
-" \
---button="On":"conky" \
---button="Off":"killall conky" \

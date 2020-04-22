@@ -1,2 +1,0 @@
-#!/bin/bash
-killall conky;cp -r ~/.config/conky/conversation/.conkyrc ~/.conkyrc;conky
