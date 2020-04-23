@@ -75,9 +75,9 @@
 
     <!-- STARTUP COMMANDS -->
 
-	<StartupCommand>/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1</StartupCommand> 
+	<StartupCommand>lxpolkit</StartupCommand> 
 				<StartupCommand>nitrogen --restore</StartupCommand>
-					<StartupCommand>/usr/share/update-notifier/update-notifier.py</StartupCommand>
+					<StartupCommand>cbatticon</StartupCommand>
 
     <!-- POWER MANAGEMENT STARTUP-->
 						<StartupCommand>exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'</StartupCommand>
