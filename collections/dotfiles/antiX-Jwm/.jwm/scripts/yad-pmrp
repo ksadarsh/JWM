@@ -1,0 +1,225 @@
+#!/bin/bash
+command -v mpv >/dev/null 2>&1 || (yad --text="PMRP requires 'mpv' but it's not installed!\nInstall 'mpv' to enjoy PMRP."; exit 1)
+
+TEXTDOMAIN=ydesk
+TEXTDOMAINDIR=/usr/share/locale
+
+export LANG=C.UTF-8
+
+export pmrp='@bash -c "run_stations %2"'
+export pmrp_stations="stations"
+
+export fpipe=$(mktemp -u --tmpdir pmrp.XXXXXXXX)
+export ppipe=$(mktemp -u --tmpdir ppmrp.XXXXXXXX)
+export cpipe=$(mktemp -u --tmpdir cpmrp.XXXXXXXX)
+export statuspipe=$(mktemp -u --tmpdir cpmrp.XXXXXXXX)
+export PMRPLIST=$(mktemp -u --tmpdir PMRPLIST.XXXXXXXX)
+
+# Pipe for setting values in the form tab
+mkfifo "$fpipe"
+# control pipe - send commands to mpv
+mkfifo "$cpipe"
+# status pipe - send text to left text pane
+mkfifo "$statuspipe"
+
+# Create the list file
+> $PMRPLIST
+
+trap "rm -f $fpipe $ppipe $cpipe $statuspipe $PMRPLIST" EXIT
+
+pmkey=$(($RANDOM * $$))
+
+# Categories are separated with "!" (without quotes)
+# The last item in category is without trailing "!"
+Categories="181.FM!
+Blues!
+Bollywood!
+Classical!
+Country!
+Electronic!
+Hits!
+Jazz!
+Medley!
+Metal!
+News_&_Views!
+Oldies!
+Reggae!
+Rock!
+Serbia!
+SomaFM!
+Urban"
+
+
+function stations
+{
+   echo "Category: $1" >> "$ppipe"
+   < "$pmrp_stations" sed -n -e 's/^.*'"$1: "'//p' \
+   | sed -e $'s/\" \"/\\\n/g;s/\"//g' >> "$fpipe"
+}
+export -f stations
+
+function run_stations
+{
+    echo "3:@disabled@"
+    echo -e '\f' >> "$fpipe"
+
+    case "$1" in
+	181.FM)
+          stations "$1"
+	    ;;
+	Blues)
+          stations "$1"
+	    ;;
+	Bollywood)
+          stations "$1"
+	    ;;
+	Classical)
+          stations "$1"
+	    ;;
+	Country)
+          stations "$1"
+	    ;;
+	Electronic)
+          stations "$1"
+	    ;;
+	Hits)
+          stations "$1"
+	    ;;
+	Jazz)
+          stations "$1"
+	    ;;
+	Medley)
+          stations "$1"
+	    ;;
+	Metal)
+          stations "$1"
+	    ;;
+	"News_&_Views")
+          stations "$1"
+	    ;;
+	Oldies)
+          stations "$1"
+	    ;;
+	Reggae)
+          stations "$1"
+	    ;;
+	Rock)
+          stations "$1"
+	    ;;
+	Serbia)
+          stations "$1"
+	    ;;
+	SomaFM)
+          stations "$1"
+	    ;;
+	Urban)
+          stations "$1"
+	    ;;
+         *)
+          echo "PMRP: Error! No such Category $1" >> "$ppipe"
+            ;;
+    esac
+    echo "3:$pmrp"
+}
+export -f run_stations
+
+function load_url
+{
+    echo "Station: $1   Url: $3" >> $ppipe    
+    # Station to the list
+    echo "$3" > $PMRPLIST
+    # Unload current Playlist
+    echo "playlist_remove current" > $cpipe
+    # Load list
+    echo "loadlist $PMRPLIST" > $cpipe
+}
+export -f load_url
+
+function status_block
+{
+if [[ ! -z "$PMRP" ]]; then
+   unset PMRP
+else
+  if [[ "$(echo "$1" | grep -c "^Name*")" = 1 ]]; then
+      STATION="$1"
+  elif [[ "$(echo "$1" | grep -c "^Title*")" = 1 ]];then
+      TITLE="$1"
+  elif [[ "$(echo "$1" | grep -c "^Bitrate")" = 1 ]];then
+      BITRATE="$1 Kb/s"
+  elif [[ "$(echo "$1" | grep -c "^PMRP:*")" = 1 ]];then
+      PMRP="$1"
+  fi
+  
+  if [[ -z "$PMRP" ]]; then
+    echo "$STATION\n$BITRATE\n$TITLE" >> "$statuspipe"
+  else
+    echo "\n$PMRP\n" >> "$statuspipe"
+  fi
+
+   echo "$(for category in $Categories; do printf "%s" "$category"; done)" >> "$statuspipe"
+   echo "$pmrp" >> "$statuspipe"
+fi
+}
+
+exec 3<> $fpipe
+exec 4<> $ppipe
+exec 5<> $cpipe
+exec 6<> $statuspipe
+
+echo "PMRP: Ready to Play" >> "$ppipe"
+
+killall mpv 2>/dev/null
+
+  mpv --playlist=$PMRPLIST --input-file=$cpipe --cache 2048 --no-config --idle=yes 2>&1 \
+     | awk '/[statusline]/{if ($0 ~ "icy-br:*") {gsub(/^.*icy-br:/,"");print "Bitrate  ", $0 ;}
+                                 else {if ($0 ~ "icy-name:*") {gsub(/^.*icy-name:/,"");print "Name    ", $0;}
+                                 else {if ($0 ~ "icy-genre:*") {gsub(/^.*icy-genre:/,"");print "Genre -", $0;}
+                                 else {if ($0 ~ "icy-title:*") {gsub(/^.*icy-title:/,"");print "Title        ", $0;}}}}}
+                                 {fflush(stdout)}'  | while read -r line; do status_block "$line"; echo "$line" >>"$ppipe"; done &
+function main() {
+  yad --plug="$pmkey" --tabnum=1 --form --cycle-read --field "":TXT --field "Category":CB  \
+     --image-ontop --field="Load Stations!gtk-add:fbtn" <&6  &
+
+  yad --plug="$pmkey" --tabnum=2 --list --no-markup --dclick-action='bash -c "load_url %s"' \
+    --text "Double click to play" --text-align=center --column="Name" --column="Category" --column="Url" \
+    --search-column=1 --expand-column=1 --print-column="3" <&3 &
+
+  # Uncoment next line if you want to start with log
+  # tail -f "$ppipe" | yad --text-info --title="PMRP-Log" --tail --window-icon=radio --width=600 --height=500 --button="gtk-close" &
+
+  # loads fields on startup
+  status_block "PMRP:   Poor Man's Radio Player"
+
+  # Reprints metadata after returning from tray
+  echo 'print_text ${metadata}' > $cpipe
+
+  yad --paned --key="$pmkey" --button="Close to Tray!gtk-close":1 \
+      --button="Show Log":'bash -c "tail -f -n +1 $ppipe | yad --text-info --tail --title=PMRP-Log --window-icon=radio --width=600 --height=500 --button=gtk-close" &' \
+      --button="Pause/Continue":'bash -c "echo cycle pause >> $cpipe"' \
+      --button="Stop":'bash -c "echo stop >> $cpipe"'  --text="Select a Category and click to Load Stations" --width=700 --height=500 \
+      --title=$"PMRP" --splitter=300 --window-icon="radio" --orient=hor --image=radio --image-on-top --posx=10 --posy=100
+RET="$?"
+
+case $RET in
+  252)
+    echo "quit" >> $cpipe
+    echo "PMRP: Preparing for radio silence" >> "$ppipe"
+    echo "PMRP: Zzzzzzz" >> "$ppipe"
+    ;;
+   1)  yad --notification   \
+          --image="radio"  \
+          --text="PMRP"
+        # Need to do this after returned from tray
+        status_block ""
+	main
+    ;;
+   *) exit 1
+    ;;
+esac
+}
+main
+
+exec 3>&-
+exec 4>&-
+exec 5>&-
+exec 6>&-

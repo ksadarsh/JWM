@@ -1,0 +1,3 @@
+#!/bin/bash
+
+yad --vertical --scale --max-value 100 --value $(amixer -M get Master | awk -v FS="[[%]" '/%/ {print $2}') --print-partial --undecorated --height 150 --fixed --sticky --mouse --on-top --escape-ok --no-buttons --close-on-unfocus --hide-value | while read VolNew; do amixer -M -q set Master ${VolNew}%; done

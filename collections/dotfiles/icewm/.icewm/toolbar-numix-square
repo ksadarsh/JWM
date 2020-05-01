@@ -1,0 +1,8 @@
+# This is a default toolbar definition file for IceWM
+#
+# Place your personal variant in $HOME/.icewm directory.
+
+### Commonly used applications
+prog "Unplug Removable Device" /usr/share/icons/numix-square-antix/48x48/devices/drive-removable-media-usb.png unplugdrive.sh
+prog "File Manager" /usr/share/icons/numix-square-antix/48x48/apps/file-manager.png desktop-defaults-run -fm
+ prog "Web Browser" /usr/share/icons/numix-square-antix/48x48/apps/web-browser.png desktop-defaults-run -b

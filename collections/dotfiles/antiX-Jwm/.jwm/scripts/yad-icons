@@ -1,0 +1,5 @@
+#!/bin/bash
+
+    yad --icons --read-dir=/usr/share/applications --fullscreen \
+        --sort-by-name --undecorated --single-click --skip-taskbar \
+        --title="Yad Icons"

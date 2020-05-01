@@ -1,0 +1,118 @@
+########################################################################
+#Sample icewm keys for antiX.
+########################################################################
+### BobC 08/14/19 - removed Alt+Ctrl Grow and shrink keys - don't work, mute wasn't working either, move to Alt+Ctrl+KP_Insert (0 key),
+########################################################################
+### BobC 08/13/19 - added Alt+Ctrl Grow and shrink keys to fit with WinArrange in preferences
+
+#######key "Alt+Ctrl+KP_Add" wingrid-grow.sh # +-Grow window
+#######key "Alt+Ctrl+KP_Subtract" wingrid-shrink.sh # --Shrink window
+
+########################################################################
+### BobC 08/12/19 - fixed lower volume key
+### BobC 08/04/19 - multimedia keys added
+########################################################################
+
+###Added the antixscreenshot on the Print key (same as MX)
+key "Print" antixscreenshot.sh
+
+###Added the more common multimedia keys
+###Multimedia keys
+key "XF86AudioLowerVolume"	amixer sset Master 5%-
+key "XF86AudioRaiseVolume"	amixer sset Master 5%+
+key "XF86AudioMute"		amixer sset Master toggle
+key "XF86AudioPlay"		xmms --play-pause
+key "XF86AudioStop"		xmms --stop
+key "XF86AudioPrev"		xmms --rew
+key "XF86AudioNext"		xmms --fwd
+key "XF86AudioRecord"	simplescreenrecorder 
+key "XF86HomePage"		desktop-defaults-run -b --new-window
+key "XF86Search"		desktop-defaults-run -b http://www.duckduckgo.com
+key "XF86Eject"			unplugdrive.sh
+key "XF86Calculator"	/bin/sh -c "galculator || gnome-calculator || xcalc || ( type bc >/dev/null 2>&1 && xterm -e bc -l)"
+key "XF86Mail"			desktop-defaults-run -e
+
+#Switch screens - this is only useful if you have multiple screens
+#switchkey "Super+p"			icewm-menu-xrandr
+
+########################################################################
+### BobC 06/15/19 - all setting same as std antiX 19b1 except the following:
+# Wingrid on Ctrl+ 1 thru 0 on number row
+key "Alt+Ctrl+1" wingrid-left.sh
+key "Alt+Ctrl+2" wingrid-right.sh
+key "Alt+Ctrl+3" wingrid-top.sh
+key "Alt+Ctrl+4" wingrid-bottom.sh
+key "Alt+Ctrl+5" wingrid-topleft.sh
+key "Alt+Ctrl+6" wingrid-topright.sh
+key "Alt+Ctrl+7" wingrid-bottomleft.sh
+key "Alt+Ctrl+8" wingrid-bottomright.sh
+key "Alt+Ctrl+9" wingrid-maximize.sh
+key "Alt+Ctrl+0" wingrid-close.sh
+key "Alt+Ctrl+minus" wingrid-shrink.sh
+key "Alt+Ctrl+equal" wingrid-grow.sh
+key "Alt+Ctrl+plus" wingrid-grow.sh
+key "Alt+Ctrl+grave" wingrid-center.sh
+# Wingrid on Ctrl+ KP rose
+key "Ctrl+Shift+KP_Left" wingrid-left.sh # Left-Move window to Left 
+key "Ctrl+Shift+KP_Right" wingrid-right.sh # Right-Move window to Right 
+key "Ctrl+Shift+KP_Up" wingrid-top.sh # Up-Move window Top 
+key "Ctrl+Shift+KP_Down" wingrid-bottom.sh # Down-Move window to Bottom 
+key "Ctrl+Shift+KP_Home" wingrid-topleft.sh # Home-Move window to Top Left 
+key "Ctrl+Shift+KP_Prior" wingrid-topright.sh # PgUp-Move window Top Right 
+key "Ctrl+Shift+KP_End" wingrid-bottomleft.sh # End-Move window to Bottom Left 
+key "Ctrl+Shift+KP_Next" wingrid-bottomright.sh # PgDn-Move window to Bottom Right 
+key "Ctrl+Shift+KP_Insert" wingrid-maximize.sh # 0-Maximize window 
+key "Ctrl+Shift+KP_Begin" wingrid-center.sh # 5-Center window
+key "Ctrl+Shift+KP_Delete" wingrid-close.sh # .-Close window
+key "Ctrl+Shift+KP_Add" wingrid-grow.sh # +-Grow window
+key "Ctrl+Shift+KP_Subtract" wingrid-shrink.sh # --Shrink window
+# app-select on Ctrl+Space
+key "Ctrl+Space" app-select
+########################################################################
+
+# suggested
+key "Alt+F2" gexec
+#key "Ctrl+Shift+Delete" desktop-session-exit
+#key "Ctrl+Alt+e" desktop-defaults-run -e
+#key "Ctrl+Alt+t" desktop-defaults-run -t
+#key "Ctrl+Shift+t" desktop-defaults-run -r -t
+#key "Ctrl+Alt+u" gftp
+#key "Ctrl+Alt+i" desktop-defaults-run -i
+#key "Ctrl+Alt+o" libreoffice
+#key "Ctrl+Alt+p" desktop-defaults-run -t htop
+#key "Ctrl+Shift+p" desktop-defaults-run -r -t htop
+#key "Ctrl+Alt+a" desktop-defaults-run -a
+#key "Ctrl+Alt+s" antixscreenshot.sh
+#key "Ctrl+Alt+d" gksu synaptic
+#key "Ctrl+Alt+f" desktop-defaults-run -fm
+#key "Ctrl+Shift+f" desktop-defaults-run -r -fm
+#key "Ctrl+Alt+g" desktop-defaults-run -te
+#key "Ctrl+Shift+g" desktop-defaults-run -r -te
+#key "Ctrl+Alt+h" desktop-defaults-run -b file:/usr/share/antiX/FAQ/index.html
+#key "Ctrl+Alt+k" desktop-session-exit
+#key "Ctrl+Alt+l" xlock
+#key "Ctrl+Alt+z" grsync
+#key "Ctrl+Alt+x" xkill
+#key "Ctrl+Alt+c" antixcc.sh
+#key "Ctrl+Alt+v" desktop-defaults-run -v
+#key "Ctrl+Alt+b" desktop-defaults-run -b
+
+
+#Set Volume
+key "Alt+Ctrl+KP_Divide" amixer -c 0 set Master 5- # lower volume
+key "Alt+Ctrl+KP_Multiply" amixer -c 0 set Master 5+ # raise volume
+key "Alt+Ctrl+KP_Insert" amixer sset Master toggle # mute on/off
+
+# F* keys examples
+# Open a terminal
+#key "F1" desktop-defaults-run -t
+# Open a dialog to run programs	
+#key "F2" gexec	
+# Open file manager			
+#key "F3" desktop-defaults-run -fm
+# Open browser
+#key "F4" desktop-defaults-run -b
+# Open antiX control centre	 
+#key "F5" antixcc.sh
+# Take a screenshot			
+#key "F6" antixscreenshot.sh		

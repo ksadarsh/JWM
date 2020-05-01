@@ -11,3 +11,6 @@ Next, download and install the Oracle public key for apt-secure by running the f
 # wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | apt-key add -
 
 # apt-get update
+
+echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
+wget -qO - https://www.virtualbox.org/download/oracle_vbox.asc | sudo apt-key add - >/dev/null 2>&1

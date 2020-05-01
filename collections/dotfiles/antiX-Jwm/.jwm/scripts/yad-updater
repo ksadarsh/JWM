@@ -1,0 +1,44 @@
+#!/bin/bash
+
+TEXTDOMAINDIR=/usr/share/locale
+TEXTDOMAIN=yad-updater
+
+touch ~/.loggy
+log="/tmp/$(date +%s)"
+
+### This 2 lines of code check if there's internet connectivity 
+# adapted from https://unix.stackexchange.com/questions/190513/shell-scripting-proper-way-to-check-for-internet-connectivity
+if nc -zw1 google.com 443; then
+  echo $"Internet connection detected"
+
+
+### Check if user is Root, if not, pop up window asking for password, to run updater. If Canceled, exits.
+# adapted from  https://stackoverflow.com/questions/42875809/checking-sudo-in-bash-script-with-if-statements 
+if [[ "$EUID" = 0 ]]; then
+    echo $"already root"
+else
+    gksudo "antiX updater"
+    if sudo true; then
+        echo $"You are Root or running the script in sudo mode"
+    else
+        echo $"You entered the wrong password or you cancelled"
+        exit 1
+    fi
+fi
+
+env LANGUAGE=en sudo apt update 2> "${log}" |
+while read -r line; do echo "# ${line}"; echo " ${line}" > ~/.loggy ; done |
+    yad --progress --pulsate --center --no-buttons --auto-close --progress-text=$"Waiting for a Network connection..." --width=500 --height=100 --title="antiX - Updater" 
+string=$(cat ~/.loggy)
+ for reqsubstr in 'up to date';do
+  if [ -z "${string##*$reqsubstr*}" ] ;then
+      yad --center --width=250 --text-align=center --text="\n  $string  " --title='antiX - Update' --button="OK":1 ; exit 0
+    else      
+		x-terminal-emulator -T " antiX - Updater" -e /bin/bash -c "sudo apt dist-upgrade -V && sleep 0.1 && yad --center --width=250 --text-align=center  --text=$"Finished" --button='OK':1 --title='antiX - Updater'"
+   fi
+    done
+
+### This 2 lines of code  end the part of the script that checks for internet connectivity
+  else  yad --center --width=250 --text-align=center  --text=$"No Internet connection detected!" --title='antiX - Updater' --button='OK':1 
+  
+fi
