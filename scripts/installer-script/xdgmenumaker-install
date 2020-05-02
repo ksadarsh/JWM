@@ -9,7 +9,8 @@ sudo make install
 cd ..
 rm -rf xdgmenumaker
 <Include>exec: xdgmenumaker -n -i -f jwm</Include>
-
+include appmenu
+xdgmenumaker -i -f icewm > ~/.icewm/appmenu
 
 Fluxbox
 

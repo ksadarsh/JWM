@@ -1,6 +1,6 @@
 #!/bin/bash
 
-menu=( 	"Surfn-Icons|./icons-surfn-v4.sh"
+menu=( 	"Surfn-Icons|./1/icons/icons-surfn-v4.sh"
 		"Install Papirus & Zafiro|./themes-and-icons.sh"
 		 )
 

@@ -220,7 +220,7 @@
 	<Key mask="A" key="#">desktop#</Key>
 	<Key mask="A" key="z">exec:rofi -show run</Key>
 	<Key mask="A" mask="r" key="e">jwm -restart</Key>
-	<Tray width="40" height="770" valign="top" halign="left" border="false" layout="vertical">
+	<Tray width="1200" height="30" valign="bottom" halign="center" border="false" layout="horizontal">
 		<Separator />
 		<TrayButton icon="/home/adarsh/.config/jwm/icons/menu.png" popup="Menu" border="0">exec:jgmenu_run<Button mask="123">exec:jgmenu_run</Button>
 		</TrayButton>
@@ -243,7 +243,7 @@
 		<TrayButton icon="/usr/share/icons/Surfn/scalable/actions/scalable/xfsm-shutdown.svg">exec:systemctl poweroff</TrayButton>
 		<Spacer width="1" />
 		<TrayButton icon="/home/adarsh/.config/jwm/icons/divider.png"</TrayButton>
-		<TaskList maxwidth="50" />
+		<TaskList maxwidth="100" />
 		<Spacer width="3" />
 		<TrayButton icon="/home/adarsh/.config/jwm/icons/divider.png"</TrayButton>
 		<Dock />
