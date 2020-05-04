@@ -1,6 +1,7 @@
 create a VirtualBox repository configuration file called /etc/apt/source.list.d/virtualbox.list using the following command.
 
 Add the following line to your /etc/apt/sources.list file.
+sudo leafpad /etc/apt/sources.list
 deb https://download.virtualbox.org/virtualbox/debian  buster contrib
 
 Save the file and exit it.
@@ -12,5 +13,4 @@ Next, download and install the Oracle public key for apt-secure by running the f
 
 # apt-get update
 
-echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
-wget -qO - https://www.virtualbox.org/download/oracle_vbox.asc | sudo apt-key add - >/dev/null 2>&1
+sudo apt install virtualbox

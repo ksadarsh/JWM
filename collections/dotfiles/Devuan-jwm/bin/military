@@ -1,0 +1,2 @@
+#!/bin/bash
+cp ~/.config/jwm/military/.jwmrc-military ~/.jwmrc&&jwm -restart&&bash -c "sleep 1 && nitrogen --restore"

@@ -1,0 +1,2 @@
+#!/bin/bash
+cp ~/.config/jwm/Dark-Theme/.jwmrc ~/.jwmrc&&jwm -restart&&bash -c "sleep 1 && nitrogen --restore"

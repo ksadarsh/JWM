@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<JWM>
+	<!--
+	TITLE:		Phono
+	AUTHOR:		Christian Bettinger <https://github.com/cbettinger>
+	JWM ver:	JWM 2.3
+	-->
+	<Desktops width="1" height="1">
+		<Background type="solid">#5B4A3A</Background>
+	</Desktops>
+
+	<RootMenu onroot="1">
+			<Program icon="/usr/share/images/menu/file-manager.png" label="File Manager">pcmanfm</Program>
+			<Program icon="/usr/share/images/menu/terminal.png" label="Terminal">lxterminal</Program>
+			<Program icon="/usr/share/images/menu/search.png" label="Run program">dmenu_run</Program>
+			<Separator/>
+		<Menu label="Screenshot" icon="/usr/share/images/menu/screenshot.png"> 	
+		<Program icon="/usr/share/images/menu/screenshot.png" label="Now">scrot -q 90 -d 1 -e 'mv $f ~/Pictures/'</Program>
+			<Program icon="/usr/share/images/menu/screenshot.png" label="In 10 seconds...">scrot -q 90 -d 10 -e 'mv $f ~/Pictures/'</Program>
+			<Program icon="/usr/share/images/menu/screenshot.png" label="In 20 seconds...">scrot -q 90 -d 20 -e 'mv $f ~/Pictures/'</Program>
+			<Program icon="/usr/share/images/menu/screenshot.png" label="Area (drag the mouse)">scrot -q 90 -s -e 'mv $f ~/Pictures/'</Program>
+			<Program icon="/usr/share/images/menu/screenshot.png" label="Window (click the window)">scrot -q 90 -s -b -e 'mv $f ~/Pictures/'</Program>
+	</Menu>
+		<Separator/>
+		<Menu label="Menu" icon="/usr/share/images/menu/start-here.svg"> 
+			<Include>exec: xdgmenumaker -n -i -f jwm</Include>
+		</Menu>
+		<Separator/> <Program icon="/usr/share/images/menu/redo.png" label="Refresh Menu">jwm -reload</Program>
+		<Separator/> <Program icon="/usr/share/images/menu/restart.svg" label="Restart JWM">miyo-jwm-restart</Program>
+		<Separator/> <Program icon="/usr/share/images/menu/lock.svg" label="Screen Lock">slimlock</Program>
+					 <Program icon="/usr/share/images/menu/shutdown.svg" label="Shutdown">loginctl poweroff</Program>
+					 <Program icon="/usr/share/images/menu/reboot.svg" label="Reboot">loginctl reboot</Program>
+					 <Program icon="/usr/share/images/menu/logout.svg" label="Logout">jwm -exit</Program>
+		<Separator/>
+		<Menu label="JWM Configuration" icon="/usr/share/images/menu/utilities.png">
+		   <Menu label="Themes" icon="/usr/share/images/menu/preferences-desktop-theme.png">
+				<Program icon="/usr/share/images/menu/themes.png" label="Dark Theme">miyo-jwm-dark</Program>
+				<Program icon="/usr/share/images/menu/themes.png" label="Light Theme">miyo-jwm-light</Program>
+				<Program icon="/usr/share/images/menu/themes.png" label="Phono">phono</Program>
+		   </Menu>
+	</Menu>
+</RootMenu>
+<!-- STARTUP COMMANDS - STARTS -->
+
+		<StartupCommand>lxpolkit</StartupCommand> 
+        <StartupCommand>nitrogen --restore</StartupCommand>
+		<StartupCommand>/usr/share/update-notifier/update-notifier.py</StartupCommand>
+		<StartupCommand>cbatticon</StartupCommand>
+		<StartupCommand>compton -c /home/adarsh/.config/jwm/compton.conf</StartupCommand>
+    	<StartupCommand>conky</StartupCommand>
+    	<StartupCommand>numlockx</StartupCommand>
+		<StartupCommand>volumeicon</StartupCommand> 
+		<StartupCommand>cmst -m -i Yaru</StartupCommand>
+
+<!-- STARTUP COMMANDS - ENDS -->
+	
+	<MenuStyle>
+		<Font>LiberationSans-12:bold</Font>
+		<Outline>#1B1A18</Outline>
+		<Background>#1B1A18</Background>
+		<Foreground>#D3D8D2</Foreground>
+		<Active>
+			<Background>#1B1A18</Background>
+		<!--	<Foreground>#F2B826</Foreground> -->
+		<!--	<Foreground>#53C1FB</Foreground> -->
+			<Foreground>#02A0F9</Foreground>
+		</Active>
+		<Opacity>1.0</Opacity>
+	</MenuStyle>
+
+	<Tray x="0" y="-1" height="36" autohide="off">
+		<!-- <TrayButton icon="start-ubuntu.png" label="Start">root:1</TrayButton> <Spacer width="2" /> -->
+		<TrayButton icon="/usr/share/images/menu/start-bsd.png" label="Start">root:1</TrayButton> <Spacer width="2" />
+		<TrayButton icon="/usr/share/images/menu/switch-user.svg">exec:rofi-neon</TrayButton> <Spacer width="7"/>
+		<TrayButton icon="/usr/share/images/menu/file-manager.png">exec:pcmanfm</TrayButton> <Spacer width="7"/>
+		<TrayButton icon="/usr/share/images/menu/root.svg">exec:miyo-root-pcmanfm</TrayButton> <Spacer width="7"/>
+        <TrayButton icon="/usr/share/images/menu/terminal.png">exec:lxterminal</TrayButton> <Spacer width="7"/>
+        <TrayButton icon="/usr/share/images/menu/firefox.svg">exec:firefox</TrayButton> <Spacer width="7"/>
+        <TrayButton icon="/usr/share/images/menu/show-desktop.svg">showdesktop</TrayButton> <Spacer width="14"/>
+		<TrayButton icon="/usr/share/images/menu/lock.svg">exec:slimlock</TrayButton> <Spacer width="7"/>
+        <TrayButton icon="/usr/share/images/menu/shutdown.svg">exec:loginctl poweroff</TrayButton> <Spacer width="7"/>
+		<TrayButton icon="/usr/share/images/menu/reboot.svg">exec:loginctl reboot</TrayButton> <Spacer width="7"/>
+		<TrayButton icon="/usr/share/images/menu/logout.svg">exec:jwm -exit</TrayButton> <Spacer width="7"/>
+		<Dock/>
+		<Spacer width="10" />
+		<Pager labeled="false" />
+		<Spacer width="2" />
+
+		<TaskList maxwidth="50" />
+		<Spacer width="10" />
+		
+	</Tray>
+
+	<Tray halign="right" y="-18" height="18" autohide="off">
+		<Clock format="%H:%M"></Clock>
+		<Spacer width="18" />
+	</Tray>
+
+	<Tray halign="right" y="-2" height="18" autohide="off">
+		<Clock format="%d. %b. %Y"></Clock>
+	</Tray>
+
+	<TrayStyle group="false" list="all">
+		<Font>LiberationSans-9:bold</Font>
+		<Outline>#1B1A18</Outline>
+		<Background>#1B1A18</Background>
+		<Foreground>#D3D8D2</Foreground>
+		<Active>
+			<Background>#1B1A18</Background>
+			<Foreground>#F2B826</Foreground>
+		</Active>
+		<Opacity>1.0</Opacity>
+	</TrayStyle>
+
+	<PagerStyle>
+		<Font>LiberationSans-9</Font>
+		<Outline>#1B1A18</Outline>
+		<!-- Inactive Desktop Background -->
+		<Background>#2A2A2A</Background>
+		<!-- Unfocused Window -->
+		<Foreground>#D3D8D2</Foreground>
+		<Text>#1b1a18</Text>
+		<Active>
+			<!-- Active Desktop Background -->
+			<Background>#5B4A3A</Background>
+			<!-- Focused Window -->
+			<Foreground>#F2B826</Foreground>
+		</Active>
+	</PagerStyle>
+
+	<ClockStyle>
+		<Font>LiberationSans-8</Font>
+	</ClockStyle>
+
+	<WindowStyle>
+		<Font>LiberationSans-9:bold</Font>
+		<Width>2</Width>
+		<Height>24</Height>
+		<Corner>3</Corner>
+		<Outline>#1B1A18</Outline>
+		<Background>#1B1A18</Background>
+		<Foreground>#D3D8D2</Foreground>
+		<Opacity>0.618</Opacity>
+		<Active>
+			<Outline>#1B1A18</Outline>
+			<Background>#1B1A18</Background>
+			<Foreground>#F2B826</Foreground>
+			<Opacity>1.0</Opacity>
+		</Active>
+	</WindowStyle>
+
+	<PopupStyle enabled="false">
+		<Font>LiberationSans-9</Font>
+		<Outline>#1B1A18</Outline>
+		<Background>#1B1A18</Background>
+		<Foreground>#D3D8D2</Foreground>
+	</PopupStyle>
+
+	<Group>
+		<Option>tiled</Option>
+		<Option>aerosnap</Option>
+	</Group>
+
+	<IconPath>
+		$HOME/.icons
+	</IconPath>
+	<IconPath>
+		$HOME/.icons/phono-theme
+	</IconPath>
+	<IconPath>
+		/usr/local/share/icons
+	</IconPath>
+	<IconPath>
+		/usr/local/share/pixmaps
+	</IconPath>
+	<IconPath>
+		/usr/local/lib/X11/icons
+	</IconPath>
+	<IconPath>
+		/usr/local/share/jwm
+	</IconPath>
+
+	<ButtonMin>minimize.png</ButtonMin>
+	<ButtonMax>maximize.png</ButtonMax>
+	<ButtonMaxActive>maximize.png</ButtonMaxActive>
+	<ButtonClose>close.png</ButtonClose>
+
+	<FocusModel>click</FocusModel>
+	<SnapMode distance="10">border</SnapMode>
+	<MoveMode coordinates="off">opaque</MoveMode>
+	<ResizeMode>opaque</ResizeMode>
+
+	<Key key="Up">up</Key>
+	<Key key="Down">down</Key>
+	<Key key="Right">right</Key>
+	<Key key="Left">left</Key>
+	<Key key="Return">select</Key>
+	<Key key="Escape">escape</Key>
+
+	<Key mask="C" key="Left">ldesktop</Key>
+	<Key mask="C" key="Right">rdesktop</Key>
+	<Key mask="C" key="Up">udesktop</Key>
+	<Key mask="C" key="Down">ddesktop</Key>
+
+	<Key mask="A" key="Left">maxleft</Key>
+	<Key mask="A" key="Right">maxright</Key>
+	<Key mask="A" key="Up">maximize</Key>
+	<Key mask="A" key="Down">shade</Key>
+
+	<Key mask="A" key="Q">close</Key>
+
+	<Key mask="A" key="R">restart</Key>
+	<Key mask="A" key="X">exit</Key>
+</JWM>
