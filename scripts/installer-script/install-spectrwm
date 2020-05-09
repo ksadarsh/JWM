@@ -1,0 +1,4 @@
+sudo cp /etc/spectrwm.conf ~/.spectrwm.conf
+sudo chown adarsh ~/.spectrwm.conf
+chmod 755 ~/.spectrwm.conf
+sudo cat /usr/share/doc/spectrwm/examples/spectrwm_us.conf >> ~/.spectrwm.conf
