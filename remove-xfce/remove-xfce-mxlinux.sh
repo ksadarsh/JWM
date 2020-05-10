@@ -8,3 +8,4 @@ dpkg -l | grep .hexchat. | awk '{print $2}' | xargs sudo apt-get purge -V --auto
 
 # sudo apt install desktop-defaults-mx-common
 
+dpkg -l | grep .xed. | awk '{print $2}' | xargs sudo apt-get purge -V --auto-remove -yy

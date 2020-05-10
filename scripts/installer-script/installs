@@ -1,0 +1,6 @@
+sudo apt install git curl wget yad compton rofi nitrogen lxpolkit dmenu dunst xterm htop lxappearance sakura gdebi volumeicon-alsa alsa-utils conky pavucontrol cmst libgtk3-perl arandr mlocate geany gvfs gvfs-backends icewm
+
+sudo apt install pcmanfm --no-install-recommends
+
+sudo apt install linux-headers-$(uname -r)
+sudo apt install dkms virtualbox 

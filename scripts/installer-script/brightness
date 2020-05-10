@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Brightness script for the ASUS G74SX
+#
+# Arguments:
+#   up   - increase brightness by 1
+#   down - decrease brightness by 1
+#
+
+BRIGHTNESS=`cat /sys/devices/platform/asus-nb-wmi/leds/asus\:\:kbd_backlight/brightness`
+MAX_BRIGHT=`cat /sys/devices/platform/asus-nb-wmi/leds/asus\:\:kbd_backlight/max_brightness`
+
+# Try to recover brightness setting (since the `cat` seems to always return 0)
+if [ -f /tmp/keyboard-brightness-ctl ]
+then
+  BRIGHTNESS=`cat /tmp/keyboard-brightness-ctl`
+fi
+
+case "$1" in
+  up)
+    BRIGHTNESS=$((BRIGHTNESS + 1))
+    if [ $BRIGHTNESS -gt $MAX_BRIGHT ] ; then BRIGHTNESS=$MAX_BRIGHT ; fi
+    echo $BRIGHTNESS > /tmp/keyboard-brightness-ctl
+    echo $BRIGHTNESS > /sys/devices/platform/asus-nb-wmi/leds/asus\:\:kbd_backlight/brightness
+  ;;
+
+  down)
+    BRIGHTNESS=$((BRIGHTNESS - 1))
+    if [ $BRIGHTNESS -lt 0 ] ; then BRIGHTNESS=0 ; fi
+    echo $BRIGHTNESS > /tmp/keyboard-brightness-ctl
+    echo $BRIGHTNESS > /sys/devices/platform/asus-nb-wmi/leds/asus\:\:kbd_backlight/brightness
+  ;;
+esac
