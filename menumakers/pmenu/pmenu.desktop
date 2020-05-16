@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=PMenu Start Menu
+GenericName=Start Menu
+Comment=Start Menu
+Exec=pmenu.py
+Terminal=false
+Icon=distributor-logo
+Type=Application
+Categories=Utility;

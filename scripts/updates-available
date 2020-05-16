@@ -1,0 +1,14 @@
+#!/bin/bash
+sudo apt -qy update > /dev/null
+NUMOFUPDATES=$(aptitude search "~U" | wc -l)
+echo $NUMOFUPDATES
+
+if [ $NUMOFUPDATES -gt 0 ]; then
+    sleep 10
+    if zenity --width=200 --height=80 --title=Updater --question --text "<b>$NUMOFUPDATES Updates available</b>\nRun system update?" 
+        then
+    xfce4-terminal -e 'sudo /usr/share/dxt2/update'
+        else
+    exit 1
+	fi
+fi

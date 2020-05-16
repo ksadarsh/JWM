@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo apt -qy update > /dev/null
+NUMOFUPDATES=$(aptitude search "~U" | wc -l)
+echo $NUMOFUPDATES
