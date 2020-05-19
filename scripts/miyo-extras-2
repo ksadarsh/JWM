@@ -1,0 +1,62 @@
+#!/bin/sh
+#
+# A simple "all-in-one" Control Center for MiyoLinux/Openbox.
+#
+#
+EDITOR=leafpad
+
+YAD="/usr/bin/yad"
+KEY="191919"
+
+res1=$(mktemp --tmpdir iface1.XXXXXXXX)
+res2=$(mktemp --tmpdir iface2.XXXXXXXX)
+res3=$(mktemp --tmpdir iface3.XXXXXXXX)
+res4=$(mktemp --tmpdir iface4.XXXXXXXX)
+
+#SETTINGS="Settings"
+#SYSTEM="System
+#CONFIGURATION="Configuration Files"
+#ACCESSORIES="Miyo Accessories"
+AUTOSTART="autostart"
+MENUCONF="Edit Menu"
+RC="rc.xml"
+COMPTON="Compton"
+CONKY="Conky"
+
+# Settings
+$YAD --plug=$KEY --tabnum=1 --form --columns=1 \
+--field=" Firefox-ESR!firefox!":fbtn "lxterminal -e sudo apt-get install firefox-esr -y" \
+--field=" Chromium!chromium!":fbtn "lxterminal -e sudo apt-get install chromium -y" \
+--field=" Falkon!falkon!":fbtn "lxterminal -e sudo apt-get install falkon -y" \
+--field=" Midori!midori!":fbtn "lxterminal -e sudo apt-get install midori -y" \
+--field=" Lynx!lynx!":fbtn "lxterminal -e sudo apt-get install lynx -y" > res1 &
+
+# System
+$YAD --plug=$KEY --tabnum=2 --form --colums=1 --scroll \
+--field=" VLC Media Player!vlc!":fbtn "lxterminal -e sudo apt-get install vlc -y" \
+--field=" MPV Media Player!mpv!":fbtn "lxterminal -e sudo apt-get install mpv -y" \
+--field=" SMPlayer Media Player!smplayer!":fbtn "lxterminal -e sudo apt-get install smplayer -y" \
+--field=" Parole Media Player!parole!":fbtn "lxterminal -e sudo apt-get install parole -y" \
+--field=" Audacious Music Player!audacious!":fbtn "lxterminal -e sudo apt-get install audacious -y" \
+--field=" Clementine Music Player!clementine!":fbtn "lxterminal -e sudo apt-get install clementine -y" \
+--field=" QMMP Music Player!qmmp!":fbtn "lxterminal -e sudo apt-get install qmmp -y" \
+--field=" LXMusic Music Player!lxmusic!":fbtn "lxterminal -e sudo apt-get install lxmusic -y" \
+--field=" Cmus Music Player!terminal!":fbtn "lxterminal -e sudo apt-get install cmus -y" > $res2 &
+
+# Configuration
+$YAD --plug=$KEY --tabnum=3 --form --columns=1 \
+--field=" LibreOffice Full Suite!libreoffice!":fbtn "lxterminal -e sudo apt-get install libreoffice -y" \
+--field=" LibreOffice Writer!libreoffice-writer!":fbtn "lxterminal -e sudo apt-get install libreoffice-writer --no-install-recommends -y" \
+--field=" LibreOffice Calc!libreoffice-calc!":fbtn "lxterminal -e sudo apt-get install libreoffice-calc -y" \
+--field=" Abiword Word Processor!abiword!":fbtn "lxterminal -e sudo apt-get install abiword -y" \
+--field=" Gnumeric Spreadsheets!gnumeric!":fbtn "lxterminal -e sudo apt-get install gnumeric --no-install-recommends -y" >$res3 &
+
+# Main Window
+$YAD --notebook --key=$KEY --tab="Browsers" --tab="Multimedia" --tab="Office" \
+     --always-print-result --dialog-sep \
+--text="From here, you can easily install some common software. Be aware that if you click on an item, it will be installed.
+" \
+--progress --width=355 --height=300 --borders=10 --center --tab-pos=left --window-icon="preferences-system" --percentage="0" --auto-close --pulsate --title="MiyoLinux-Extras" --button=gtk-close \
+
+# Cleanup
+rm -f $res1 $res2 $res3 $res4
